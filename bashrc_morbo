@@ -2,6 +2,7 @@
 P=(
   /usr/local/opt/go/libexec/bin
   /opt/local/pgsql/bin
+  $HOME/.rvm/bin
   $ANDROID_HOME/tools
   $ANDROID_HOME/platform-tools
   $PATH
