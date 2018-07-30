@@ -13,7 +13,7 @@ PATH=$(IFS=:; echo "${P[*]}")
 export PATH
 
 # SSH
-ssh-add -K ~/.ssh/id_rsa ~/.ssh/unicorn &>/dev/null
+ssh-add -K ~/.ssh/id_rsa ~/.ssh/unicorn ~/.ssh/ecs_root_ssh.priv &>/dev/null
 
 # Git
 source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
@@ -31,6 +31,7 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # Unicorn
 export UNICORN_TIMEOUT=90
+export UNICORN_COUNT=6
 
 # Terraform
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
