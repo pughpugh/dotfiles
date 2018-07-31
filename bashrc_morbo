@@ -29,10 +29,6 @@ export REACT_EDITOR=atom
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
-# Unicorn
-export UNICORN_TIMEOUT=90
-export UNICORN_COUNT=6
-
 # Terraform
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
   source "/usr/local/share/chtf/chtf.sh"
