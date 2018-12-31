@@ -2,6 +2,7 @@
 P=(
   /usr/local/opt/go/libexec/bin
   /opt/local/pgsql/bin
+  /usr/local/opt/
   $HOME/.rvm/bin
   $ANDROID_HOME/tools
   $ANDROID_HOME/platform-tools
@@ -12,7 +13,7 @@ PATH=$(IFS=:; echo "${P[*]}")
 export PATH
 
 # SSH
-ssh-add -K ~/.ssh/id_rsa ~/.ssh/unicorn &>/dev/null
+ssh-add -K ~/.ssh/id_rsa ~/.ssh/unicorn ~/.ssh/ecs_root_ssh.priv &>/dev/null
 
 # Git
 source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
@@ -21,12 +22,12 @@ source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.
 # Android
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 
+# React
+export REACT_EDITOR=atom
+
 # Postgres
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-
-# Unicorn
-export UNICORN_TIMEOUT=90
 
 # Terraform
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
