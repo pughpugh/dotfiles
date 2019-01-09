@@ -6,6 +6,7 @@ P=(
   $HOME/.rvm/bin
   $ANDROID_HOME/tools
   $ANDROID_HOME/platform-tools
+  $(brew --prefix qt@5.5)/bin
   $PATH
 )
 
@@ -38,7 +39,7 @@ fi
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-# Alias
+# Alias and functions
 alias fs='foreman start -f Procfile'
 alias t='bundle exec rspec'
 alias gogoroboreg='ruby -I./lib ./bin/robo_reg.rb'
@@ -50,8 +51,6 @@ export DOCKER_HOST='tcp://unicorn:4243'
 export NODE_PATH=/usr/local/lib/node_modules
 export NODE_ENV=development
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Secrets
 source ~/.bash_secrets
