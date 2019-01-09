@@ -1,2 +1,5 @@
 # Git
 source /etc/bash_completion.d/git-prompt
+
+# NPM
+source <(npm completion)
