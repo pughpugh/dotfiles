@@ -1,12 +1,10 @@
 # Paths
 P=(
   /usr/local/opt/go/libexec/bin
-  /opt/local/pgsql/bin
-  /usr/local/opt/
+  /usr/local/opt
   $HOME/.rvm/bin
   $ANDROID_HOME/tools
   $ANDROID_HOME/platform-tools
-  $(brew --prefix qt@5.5)/bin
   $PATH
 )
 
