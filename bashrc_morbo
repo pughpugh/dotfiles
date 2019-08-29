@@ -2,7 +2,9 @@
 P=(
   /usr/local/opt/go/libexec/bin
   /usr/local/opt
+  /usr/local/bin
   $HOME/.rvm/bin
+  $HOME/.fastlane/bin
   $ANDROID_HOME/tools
   $ANDROID_HOME/platform-tools
   $PATH
