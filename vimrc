@@ -7,18 +7,18 @@ call vundle#begin()
 
 "Vundle plugins
 Plugin 'gmarik/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'godlygeek/tabular'
+"Plugin 'airblade/vim-gitgutter'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'w0rp/ale'
 Plugin 'lisposter/vim-blackboard'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
-Plugin 'ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
+"Plugin 'junegunn/fzf.vim'
+"Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -41,6 +41,7 @@ set expandtab      "turn tabs into whitespace
 set shiftwidth=2   "indent width for autoindent
 set hlsearch
 set omnifunc=syntaxcomplete#Complete
+"set rtp+=/usr/local/opt/fzf
 
 filetype indent on "indent depends on filetype
 
