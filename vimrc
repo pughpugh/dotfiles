@@ -30,6 +30,10 @@ set hlsearch       "highight search
 set background=dark
 set t_Co=256
 set omnifunc=syntaxcomplete#Complete
+set splitright
+set splitbelow
+
+let g:ale_fixers = { 'ruby': ['rubocop'] }
 
 filetype indent on "indent depends on filetype
 
