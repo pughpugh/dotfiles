@@ -19,19 +19,19 @@ Plugin 'junegunn/fzf.vim'
 call vundle#end()
 filetype plugin indent on
 
-set backspace=2    "Fix backspace not working in OSX
+set backspace=2     "Fix backspace not working in OSX
 set number
 set wrap!
 set smartindent
-set tabstop=2      "set tab character to 2 characters
-set expandtab      "turn tabs into whitespace
-set shiftwidth=2   "indent width for autoindent
-set hlsearch       "highight search
+set tabstop=2       "set tab character to 2 characters
+set expandtab       "turn tabs into whitespace
+set shiftwidth=2    "indent width for autoindent
+set hlsearch        "highight search
 set background=dark
-set t_Co=256
+set t_Co=256        "enable 256 colors
+set splitright      "always v split right current split
+set splitbelow      "always h split below current split
 set omnifunc=syntaxcomplete#Complete
-set splitright
-set splitbelow
 
 let g:ale_fixers = { 'ruby': ['rubocop'] }
 
