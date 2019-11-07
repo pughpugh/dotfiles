@@ -15,6 +15,7 @@ Plugin 'lisposter/vim-blackboard'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
 Plugin 'junegunn/fzf.vim'
+Plugin 'chrisbra/Colorizer'
 
 call vundle#end()
 filetype plugin indent on
@@ -33,6 +34,7 @@ set splitright      "always v split right current split
 set splitbelow      "always h split below current split
 set omnifunc=syntaxcomplete#Complete
 
+let g:colorizer_auto_filetype='scss,css,html,haml,erb'
 let g:ale_fixers = { 'ruby': ['rubocop'] }
 
 filetype indent on "indent depends on filetype
