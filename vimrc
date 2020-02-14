@@ -33,6 +33,7 @@ set t_Co=256        "enable 256 colors
 set splitright      "always v split right current split
 set splitbelow      "always h split below current split
 set omnifunc=syntaxcomplete#Complete
+set wildmode=longest:full,full
 
 let g:colorizer_auto_filetype='scss,css,html,haml,erb'
 let g:ale_fixers = { 'ruby': ['rubocop'] }
