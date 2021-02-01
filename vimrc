@@ -24,6 +24,7 @@ set backspace=2     "Fix backspace not working in OSX
 set number
 set wrap!
 set smartindent
+set nofoldenable
 set tabstop=2       "set tab character to 2 characters
 set expandtab       "turn tabs into whitespace
 set shiftwidth=2    "indent width for autoindent
@@ -66,3 +67,5 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 augroup END
+
+nnoremap <silent> <C-f> :Files<CR>
