@@ -3,6 +3,7 @@ P=(
   /usr/local/opt/go/libexec/bin
   /usr/local/opt
   /usr/local/bin
+  /usr/local/opt/postgresql@9.6/bin
   $HOME/.rvm/bin
   $HOME/.fastlane/bin
   $ANDROID_HOME/tools
@@ -43,9 +44,6 @@ source $(brew --prefix nvm)/nvm.sh
 alias fs='foreman start -f Procfile'
 alias t='bundle exec rspec'
 alias gogoroboreg='ruby -I./lib ./bin/robo_reg.rb'
-
-# Docker
-export DOCKER_HOST='tcp://unicorn:4243'
 
 # Node
 export NODE_PATH=/usr/local/lib/node_modules
