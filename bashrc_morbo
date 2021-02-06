@@ -18,8 +18,8 @@ export PATH
 ssh-add -K ~/.ssh/id_rsa ~/.ssh/unicorn ~/.ssh/ecs_root_ssh.priv &>/dev/null
 
 # Git
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 
 # Android
 export ANDROID_HOME=${HOME}/Library/Android/sdk
