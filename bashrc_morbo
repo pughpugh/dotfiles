@@ -3,7 +3,7 @@ P=(
   /usr/local/opt/go/libexec/bin
   /usr/local/opt
   /usr/local/bin
-  /usr/local/opt/postgresql@9.6/bin
+  /usr/local/opt/postgresql@10/bin
   $HOME/.rvm/bin
   $HOME/.fastlane/bin
   $ANDROID_HOME/tools
@@ -28,8 +28,8 @@ export ANDROID_HOME=${HOME}/Library/Android/sdk
 export REACT_EDITOR=atom
 
 # Postgres
-alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias pgstart='pg_ctl -D /usr/local/var/postgresql -l /usr/local/var/postgresql/server.log start'
+alias pgstop='pg_ctl -D /usr/local/var/postgresql stop -s -m fast'
 
 # Terraform
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
@@ -41,9 +41,7 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Alias and functions
-alias fs='foreman start -f Procfile'
 alias t='bundle exec rspec'
-alias gogoroboreg='ruby -I./lib ./bin/robo_reg.rb'
 
 # Node
 export NODE_PATH=/usr/local/lib/node_modules
