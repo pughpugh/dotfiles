@@ -36,8 +36,8 @@ set splitbelow      "always h split below current split
 set omnifunc=syntaxcomplete#Complete
 set wildmode=longest:full,full
 
-let g:colorizer_auto_filetype='scss,css,html,haml,erb'
-let g:ale_fixers = { 'ruby': ['rubocop'] }
+let g:colorizer_auto_filetype='scss,css,html,haml,erb,js'
+let g:ale_fixers = { 'ruby': ['rubocop'], 'javascript': ['eslint'] }
 
 filetype indent on "indent depends on filetype
 
