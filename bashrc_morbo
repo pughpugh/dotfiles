@@ -3,7 +3,7 @@ P=(
   /usr/local/opt/go/libexec/bin
   /usr/local/opt
   /usr/local/bin
-  /usr/local/opt/postgresql@10/bin
+  /usr/local/opt/postgresql@11/bin
   $HOME/.rvm/bin
   $HOME/.fastlane/bin
   $ANDROID_HOME/tools
