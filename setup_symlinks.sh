@@ -1,4 +1,7 @@
-ln -si ~/dotfiles/vimrc ~/.vimrc
+mkdir -p ~/.config/nvim
+
+ln -si ~/dotfiles/init.vim ~/.config/nvim/init.vim
+ln -si ~/dotfiles/lua ~/.config/nvim/lua
 ln -si ~/dotfiles/bashrc ~/.bashrc
 ln -si ~/dotfiles/bash_profile ~/.bash_profile
 
