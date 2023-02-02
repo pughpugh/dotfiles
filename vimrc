@@ -28,7 +28,7 @@ set nofoldenable
 set tabstop=2       "set tab character to 2 characters
 set expandtab       "turn tabs into whitespace
 set shiftwidth=2    "indent width for autoindent
-set hlsearch        "highight search
+set hlsearch        "highlight search
 set background=dark
 set t_Co=256        "enable 256 colors
 set splitright      "always v split right current split

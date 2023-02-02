@@ -5,4 +5,9 @@ return require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
   use 'junegunn/fzf.vim'
   use 'chrisbra/Colorizer'
+  use 'kchmck/vim-coffee-script'
+  use 'ethanholz/nvim-lastplace'
+
+  require'nvim-lastplace'.setup{}
 end)
+
