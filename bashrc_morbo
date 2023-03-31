@@ -1,13 +1,11 @@
+export VOLTA_HOME="$HOME/.volta"
+
 # Paths
 P=(
-  /usr/local/opt/go/libexec/bin
-  /usr/local/opt
   /usr/local/bin
-  /usr/local/opt/postgresql@11/bin
-  $HOME/.rvm/bin
-  $HOME/.fastlane/bin
-  $ANDROID_HOME/tools
-  $ANDROID_HOME/platform-tools
+  /opt/homebrew/bin
+  /opt/homebrew/opt/openjdk/bin
+  $VOLTA_HOME/bin
   $PATH
 )
 
@@ -28,20 +26,28 @@ export ANDROID_HOME=${HOME}/Library/Android/sdk
 export REACT_EDITOR=atom
 
 # Postgres
-alias pgstart='pg_ctl -D /usr/local/var/postgresql -l /usr/local/var/postgresql/server.log start'
-alias pgstop='pg_ctl -D /usr/local/var/postgresql stop -s -m fast'
+alias pgstart='brew services start postgresql@14'
+alias pgstop='brew services stop postgresql@14'
 
 # Terraform
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
   source "/usr/local/share/chtf/chtf.sh"
 fi
 
-# NVM
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 # Alias and functions
 alias t='bundle exec rspec'
+
+# Parallel spec runner
+pt () {
+  echo 'Running parallel:prepare'
+  RAILS_ENV=test bundle exec rake parallel:prepare
+  echo 'Starting Solr'
+  RAILS_ENV=test bundle exec rake sunspot:solr:start
+  echo 'Running parallel:spec'
+  RAILS_ENV=test bundle exec rake parallel:spec
+  echo 'Stopping Solr'
+  RAILS_ENV=test bundle exec rake sunspot:solr:stop
+}
 
 # Node
 export NODE_PATH=/usr/local/lib/node_modules
