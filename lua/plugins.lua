@@ -1,12 +1,13 @@
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'w0rp/ale'
-  use 'lisposter/vim-blackboard'
-  use 'editorconfig/editorconfig-vim'
-  use 'junegunn/fzf.vim'
+  use 'astashov/vim-ruby-debugger'
   use 'chrisbra/Colorizer'
-  use 'kchmck/vim-coffee-script'
+  use 'editorconfig/editorconfig-vim'
   use 'ethanholz/nvim-lastplace'
+  use 'junegunn/fzf.vim'
+  use 'kchmck/vim-coffee-script'
+  use 'lisposter/vim-blackboard'
+  use 'w0rp/ale'
+  use 'wbthomason/packer.nvim'
 
   require'nvim-lastplace'.setup{}
 end)
