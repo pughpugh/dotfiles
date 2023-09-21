@@ -3,6 +3,7 @@ return require('packer').startup(function(use)
   use 'chrisbra/Colorizer'
   use 'editorconfig/editorconfig-vim'
   use 'ethanholz/nvim-lastplace'
+  use 'github/copilot.vim'
   use 'junegunn/fzf.vim'
   use 'kchmck/vim-coffee-script'
   use 'lisposter/vim-blackboard'
