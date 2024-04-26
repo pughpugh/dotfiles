@@ -15,9 +15,12 @@ set splitright                 "always v split right current split
 set tabstop=2                  "set tab character to 2 characters
 set wrap!                      "disable line wrapping
 
+let g:copilot_node_command = "~/.volta/bin/node"
 lua require('plugins')
 
+
 colorscheme blackboard
+let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_fixers = { 'ruby': ['rubocop'], 'javascript': ['eslint'] }
 let g:colorizer_auto_filetype='scss,css,html,haml,erb,js'
 
