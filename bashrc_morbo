@@ -59,3 +59,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Secrets
 source ~/.bash_secrets
+
+# Terraform
+if [[ -f /opt/homebrew/share/chtf/chtf.sh ]]; then
+  source /opt/homebrew/share/chtf/chtf.sh
+fi
