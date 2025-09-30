@@ -5,6 +5,8 @@ P=(
   /usr/local/bin
   /opt/homebrew/bin
   /opt/homebrew/opt/openjdk/bin
+  /opt/homebrew/opt/postgresql@15/bin
+  $HOME/.jenv/bin
   $VOLTA_HOME/bin
   $PATH
 )
@@ -26,8 +28,8 @@ export ANDROID_HOME=${HOME}/Library/Android/sdk
 export REACT_EDITOR=atom
 
 # Postgres
-alias pgstart='brew services start postgresql@14'
-alias pgstop='brew services stop postgresql@14'
+alias pgstart='brew services start postgresql@15'
+alias pgstop='brew services stop postgresql@15'
 
 # Terraform
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
@@ -64,3 +66,6 @@ source ~/.bash_secrets
 if [[ -f /opt/homebrew/share/chtf/chtf.sh ]]; then
   source /opt/homebrew/share/chtf/chtf.sh
 fi
+
+# Java / Jenv
+eval "$(jenv init -)"
