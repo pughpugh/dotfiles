@@ -1,19 +1,78 @@
-if [ -f ~/.bashrc_local ]; then
-  source ~/.bashrc_local
-fi
-
 # Paths
 P=(
-  /usr/local/sbin
+  /usr/local/bin
+  /opt/homebrew/bin
+  /opt/homebrew/opt/openjdk/bin
+  /opt/homebrew/opt/postgresql@15/bin
+  ./node_modules/.bin
   $HOME/bin
   $HOME/.node/bin
   $HOME/.rvm/bin
-  ./node_modules/.bin
+  $HOME/.jenv/bin
+  ./bin
   $PATH
 )
 
 PATH=$(IFS=:; echo "${P[*]}")
 export PATH
+
+# SSH
+ssh-add -K ~/.ssh/id_rsa ~/.ssh/ecs_root_ssh.priv &>/dev/null
+
+# Git
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+
+# Postgres
+alias pgstart='brew services start postgresql@15'
+alias pgstop='brew services stop postgresql@15'
+
+# Terraform
+if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
+  source "/usr/local/share/chtf/chtf.sh"
+fi
+
+# Alias and functions
+alias t='bundle exec rspec'
+alias aws-sso-login='aws sso login --profile salesmaster-production'
+
+# Parallel spec runner
+pt () {
+  echo 'Running parallel:prepare'
+  RAILS_ENV=test bundle exec rake parallel:prepare
+  echo 'Starting Solr'
+  RAILS_ENV=test bundle exec rake sunspot:solr:start
+  echo 'Running parallel:spec'
+  RAILS_ENV=test bundle exec rake parallel:spec
+  echo 'Stopping Solr'
+  RAILS_ENV=test bundle exec rake sunspot:solr:stop
+}
+
+# Node
+export NODE_PATH=/usr/local/lib/node_modules
+export NODE_ENV=development
+
+# OSX
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Secrets
+source ~/.bash_secrets
+
+# Terraform
+if [[ -f /opt/homebrew/share/chtf/chtf.sh ]]; then
+  source /opt/homebrew/share/chtf/chtf.sh
+fi
+
+# Java / Jenv
+eval "$(jenv init -)"
+
+# Mise
+eval "$(~/.local/bin/mise activate bash)"
+
+# Ghostty
+if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
+  builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
+fi
 
 # Prompt
 export PS1='\[$(tput setaf 1)\][\u@\h]\[$(tput setaf 6)\][\w]\[$(tput setaf 2)\]$(__git_ps1 "[%s]") \[$(tput sgr0)\]';
@@ -23,7 +82,6 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 # Aliases
-alias ls='ls --color'
 alias ls='ls -G'
 alias tree='tree -C'
 alias vi='nvim'
