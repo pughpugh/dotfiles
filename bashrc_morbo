@@ -5,6 +5,7 @@ P=(
   /opt/homebrew/opt/openjdk/bin
   /opt/homebrew/opt/postgresql@15/bin
   $HOME/.jenv/bin
+  ./bin
   $PATH
 )
 
@@ -63,3 +64,8 @@ eval "$(jenv init -)"
 
 # Mise
 eval "$(~/.local/bin/mise activate bash)"
+
+# Ghostty
+if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
+  builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
+fi
